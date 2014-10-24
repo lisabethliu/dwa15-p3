@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'PageController@showHome');
-
-Route::get('/lorem-ipsum', 'PageController@showLoremIpsumGenerator');
-
-Route::get('/user-generator', 'PageController@showUsersGenerator');
+Route::group(array('prefix' => '/',), function() {
+    Route::get('', 'PageController@showHome');
+    Route::get('lorem-ipsum', 'PageController@showLoremIpsumGenerator');
+    Route::get('user-generator', 'PageController@showUsersGenerator');
+});
 
 Route::group(array('prefix' => 'api',), function() {
     Route::get('lig', 'ApiController@generateLoremIpsum');

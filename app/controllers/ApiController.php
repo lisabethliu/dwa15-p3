@@ -18,16 +18,59 @@ class ApiController extends BaseController
 
     public function generateLoremIpsum()
     {
-        $paragraphs = Input::get('paragraphs');
+        $paragraphs = $this->setDefaultValue(Input::get('paragraphs'), 1);
+        $validator = Validator::make(array(
+                'paragraphs' => $paragraphs
+            ),
+            array(
+                'paragraphs' => 'required|integer|min:1|max:99'
+            ));
 
-        $a = Validator::make(array());
-
-        return 'LoremIpsum'.$paragraphs;
+        if ($validator->passes()) {
+            $generator = new Badcow\LoremIpsum\Generator();
+            return Response::json(array('data' => $generator->getParagraphs($paragraphs)), 200);
+        } else {
+            return Response::make('Bad Request', 400);
+        }
     }
 
-    public function generateUser($qty = 1, $hasBirthday = false, $hasProfile = false)
+    public function generateUser()
     {
-        return 'LoremIpsum';
+        $qty = $this->setDefaultValue(Input::get('qty'), 1);
+        $hasBirthday = $this->setDefaultValue(Input::get('hasBirthday'), false);
+        $hasProfile = $this->setDefaultValue(Input::get('hasProfile'), false);
+
+        $validator = Validator::make(array(
+                'qty' => $qty,
+                'hasBirthday' => $hasBirthday,
+                'hasProfile' => $hasProfile
+            ),
+            array(
+                'qty' => 'required|integer|min:1|max:99',
+                'hasBirthday' => 'required|boolean',
+                'hasProfile' => 'required|boolean'
+            ));
+
+        $faker = Faker\Factory::create();
+        $users = array();
+        while ($qty > 0) {
+            $user = array('name' => $faker->name);
+            if ($hasBirthday) {
+                $user['birthday'] = $faker->dateTimeThisCentury->format('Y-m-d');
+            }
+            if ($hasProfile) {
+                $user['profile'] = $faker->text();
+            }
+
+            array_push($users, $user);
+            $qty--;
+        }
+
+        if ($validator->passes()) {
+            return Response::json(array('data' => $users), 200);
+        } else {
+            return Response::make('Bad Request', 400);
+        }
     }
 
 }

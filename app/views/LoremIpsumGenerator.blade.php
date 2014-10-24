@@ -1,5 +1,9 @@
 @extends('layouts._master')
 
+@section('javascript-modules')
+<script src='{{ asset('js/controllers/ligCtrl.js') }}'></script>
+@stop
+
 @section('title')
 Lorem Ipsum Generator
 @stop
