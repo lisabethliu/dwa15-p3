@@ -1,5 +1,8 @@
 @extends('layouts._master')
 
+@section('javascript-modules')
+@stop
+
 @section('title')
 Welcome to Developer's Best Friend
 @stop
