@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@show');
+Route::get('/', 'PageController@showHome');
+
+Route::get('/lorem-ipsum', 'PageController@showLoremIpsumGenerator');
+
+Route::get('/user-generator', 'PageController@showUsersGenerator');

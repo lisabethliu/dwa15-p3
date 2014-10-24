@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class PageController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,9 +15,19 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function show()
+	public function showHome()
 	{
 		return View::make('home');
 	}
+
+    public function showLoremIpsumGenerator()
+    {
+        return View::make('loremIpsumGenerator');
+    }
+
+    public function showUsersGenerator()
+    {
+        return View::make('userGenerator');
+    }
 
 }
