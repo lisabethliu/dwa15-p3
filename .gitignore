@@ -6,6 +6,8 @@
 *.iml
 *.iws
 
+.gitignore
+
 /bootstrap/compiled.php
 /vendor
 composer.phar
