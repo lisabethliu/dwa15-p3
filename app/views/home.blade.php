@@ -24,12 +24,13 @@ Welcome to Developer's Best Friend
   <div class='well'>
       <fieldset>
         <h3>Random User Generator</h3>
+        <p class='lead'>This generator generates specified number of users.</p>
       </fieldset>
       <div>
         <div>
           <label>Create random user data for your applications. Like Lorem Ipsum, but for people.</label>
         </div>
-        <a class='btn btn-primary btn-lg' href='user-generator'>Click here to generate some users</a>
+        <a class='btn btn-primary btn-lg' href='user-generator'>Click here to generate users</a>
       </div>
     </div>
 </div>

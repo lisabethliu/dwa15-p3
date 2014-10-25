@@ -12,21 +12,21 @@ User Generator
 <div class='container-fluid' ng-controller='NgCtrl'>
   <form name='form'>
         <div class='form-group' ng-class='{"has-error": form.qty.$invalid, "has-success": form.qty.$valid}'>
-          <label class='control-label' for='paragraphs'>Number of Users:(Max 99)</label>
+          <h3 class='control-label' for='paragraphs'>Number of Users:(Max 99)</h3>
           <input type='number' name='qty' class='form-control' placeholder='Input.....' ng-model='qty'
             min='1' max='99' required style='width:200px'>
           <span class='error' ng-show='form.qty.$invalid'>Input should be a valid number, range from 1 to 99.</span>
         </div>
-        <label>Options:</label>
+        <h3>Options:</h3>
         <div class='form-group' ng-class='{"has-error": form.birthday.$invalid, "has-success": form.birthday.$valid}'>
-          <label class='control-label' for='birthday'>
+          <h3 class='control-label' for='birthday'>
             <input type='checkbox' name='birthday' ng-model='hasBirthday'>Include a Birthday
-          </label>
+          </h3>
         </div>
         <div class='form-group' ng-class='{"has-error": form.profile.$invalid, "has-success": form.profile.$valid}'>
-          <label class='control-label' for='birthday'>
+          <h3 class='control-label' for='birthday'>
             <input type='checkbox' name='profile' ng-model='hasProfile'>Include a Profile
-          </label>
+          </h3>
         </div>
         <div>
           <button class='btn btn-lg btn-danger' ng-disabled='form.$invalid' ng-click='generate()'>Generate</button>
