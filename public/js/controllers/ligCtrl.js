@@ -20,6 +20,7 @@ angular.module('App').controller('LigCtrl',
                 })
                 .error(function (error, status) {
                     $log.debug(error, status);
+                    alert(error);
                 });
         };
     });

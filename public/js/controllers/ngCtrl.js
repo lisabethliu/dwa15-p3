@@ -23,6 +23,7 @@ angular.module('App').controller('NgCtrl',
                 })
                 .error(function (error, status) {
                     $log.debug(error, status);
+                    alert(error);
                 });
         };
     });

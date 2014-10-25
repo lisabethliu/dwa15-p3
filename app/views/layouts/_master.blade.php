@@ -16,8 +16,10 @@ ini_set('display_errors', 1);
   @show
 
   @section('css')
+
+    {{--<link href='//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet'>--}}
+    <link href='//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css' rel='stylesheet'>
     <link rel='stylesheet' href='{{ asset('css/app.css') }}'>
-    <link href='//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet'>
   @show
 
   <title>@yield('title')</title>
