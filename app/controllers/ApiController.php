@@ -16,6 +16,7 @@ class ApiController extends BaseController
     |
     */
 
+    // This function is to generate user specified paragraphs of texts using the Lorem Ipsum module
     public function generateLoremIpsum()
     {
         $paragraphs = $this->setDefaultValue(Input::get('paragraphs'), 1);
@@ -34,6 +35,7 @@ class ApiController extends BaseController
         }
     }
 
+    // This function is to generate user name(s), birthday(s) and profile(s) using Faker module.
     public function generateUser()
     {
         $qty = $this->setDefaultValue(Input::get('qty'), 1);

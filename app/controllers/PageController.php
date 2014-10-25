@@ -15,16 +15,19 @@ class PageController extends BaseController {
 	|
 	*/
 
+    // This function is to render the home page
 	public function showHome()
 	{
 		return View::make('home');
 	}
 
+    // This function is to render the Lorem Ipsum Generator page
     public function showLoremIpsumGenerator()
     {
         return View::make('loremIpsumGenerator');
     }
 
+    // This function is to render the User Generator page
     public function showUsersGenerator()
     {
         return View::make('userGenerator');

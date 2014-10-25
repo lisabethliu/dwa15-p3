@@ -9,6 +9,7 @@ angular.module('App').controller('NgCtrl',
 
         $scope.generate = function () {
             $log.debug($scope.qty, $scope.hasBirthday, $scope.hasProfile);
+
             $http({
                 method: 'GET',
                 url: 'api/ug?qty=' + $scope.qty + '&hasBirthday=' + ($scope.hasBirthday ? '1' : '0') + '&hasProfile=' + ($scope.hasProfile ? '1' : '0'),
